@@ -1,12 +1,8 @@
-# Container image for UERANSIM
+# Test Rocks
 
-UERANSIM is an Open source 5G UE and RAN (gNodeB) implementation.
+This repository contains container images used for testing Ella Core. Those images are:
+- [UERANSIM](#ueransim)
+- [SD-Core GNBSIM](#gnbsim)
+- [Ubunru Router](#ubuntu-router)
 
-This container image contains the official UERANSIM binary and is used in the context of testing Ella Core.
-
-## Usage
-
-```shell
-docker pull ghcr.io/ellanetworks/ueransim:3.2.7
-docker run -it ghcr.io/ellanetworks/ueransim:3.2.7
-```
+Click on the "Packages" tab on GitHub to see the available versions of these images.

@@ -1,0 +1,33 @@
+name: sdcore-gnbsim
+base: bare
+build-base: ubuntu@24.04
+version: '1.6.1'
+summary: SD-Core gnbsim
+description: SD-Core gnbsim
+license: Apache-2.0
+platforms:
+  amd64:
+
+parts:
+  gnbsim:
+    plugin: go
+    source: https://github.com/omec-project/gnbsim.git
+    source-type: git
+    source-tag: v${CRAFT_PROJECT_VERSION}
+    build-snaps:
+      - go/1.22/stable
+    organize:
+      bin/cmd: bin/gnbsim
+    stage-packages:
+      - iproute2
+      - libc6
+      - base-files
+  version:
+    plugin: nil
+    override-build: |
+      mkdir -p ${CRAFT_PART_INSTALL}/etc/
+      echo ${CRAFT_PROJECT_VERSION} > ${CRAFT_PART_INSTALL}/etc/workload-version
+    organize:
+      "*": etc/
+    stage:
+      - etc/
