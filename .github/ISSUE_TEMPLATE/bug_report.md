@@ -28,9 +28,8 @@ assignees: ''
 
 #### Environment
 
-- Rock version (if relevant): <!-- e.g. 1.2 -->
-- Cloud Environment: <!-- e.g. GKE -->
-- Kubernetes version (output from `kubectl version --short`):
+- Rock name: <!-- e.g. ueransim-rock -->
+- Rock version: <!-- e.g. 1.2 -->
 
 #### Additional context
 
