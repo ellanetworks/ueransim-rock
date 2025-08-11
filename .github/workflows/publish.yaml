@@ -7,6 +7,10 @@ on:
         description: Name of the artifact
         required: true
         type: string
+      path:
+        description: Path to the rockcraft.yaml file
+        required: true
+        type: string
 
 jobs:
 
@@ -33,6 +37,7 @@ jobs:
 
       - name: Import and push to github package
         run: |
+          cd ${{ inputs.path }}
           image_name="$(yq '.name' rockcraft.yaml)"
           version="$(yq '.version' rockcraft.yaml)"
           rock_file=$(ls *.rock | tail -n 1)
